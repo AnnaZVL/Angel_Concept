@@ -1,0 +1,5 @@
+@media (max-width: 991px) {
+    .header__right, .header__left {
+        flex-direction: column;
+    }
+}

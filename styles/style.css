@@ -1,0 +1,443 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+:root {
+    --color-bg: #FAF5F0;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-braun: #A37D34;
+    --color-brand-grad: linear-gradient(#D4B26F, 100%, #A87C25, 100%);
+    --color-text: #1c1c1c;
+    --color-text-light: rgba(#1c1c1c, 0.3);    
+}
+
+@font-face {
+    font-family: 'GT Eesti Pro Text';
+    src: url(../fonts/GTEestiProText-Regular.woff) format('woff'),
+        url(../fonts/GTEestiProText-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Eesti Pro Text';
+    src: url(../fonts/GTEestiProText-Medium.woff) format('woff'),
+        url(../fonts/GTEestiProText-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Eesti Pro Text';
+    src: url(../fonts/GTEestiProText-Bold.woff) format('woff'),
+        url(../fonts/GTEestiProText-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KyivType Sans';
+    src: url(../fonts/KyivTypeSans-Regular.woff) format('woff'),
+        url(../fonts/KyivTypeSans-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KyivType Sans';
+    src: url(../fonts/KyivTypeSans-Medium.woff) format('woff'),
+        url(../fonts/KyivTypeSans-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KyivType Sans';
+    src: url(../fonts/KyivTypeSans-Bold.woff) format('woff'),
+        url(../fonts/KyivTypeSans-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'GT Eesti Pro Text', sans-serif;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 124%;
+    letter-spacing: -0.01em;
+    color: var(--color-white);
+    background-color: var(--color-bg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;    
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1390px;
+    width: 100%;
+}
+
+.btn {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    justify-content: flex-start;
+    color: var(--color-white);    
+    border: 1px solid transparent;
+    font-family: 'KyivType Sans';
+    font-weight: 500;    
+    text-align: center;
+    cursor: pointer;    
+    transition: all 0.3s ease-in-out;
+}
+
+.btn--record {
+    padding: 8px 12px;
+    gap: 8px;    
+    border-radius: 999px;     
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn--white {   
+    background: var(--color-white);
+    color: var(--color-text);
+}
+
+.btn--braun {   
+    background: linear-gradient(180deg, #D4B26F -66.86%, #A87C25 180.08%);
+    color: var(--color-white);
+}
+
+.btn__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;    
+    transition: all 0.3s ease-in-out;
+}
+
+.btn__icon .btn__arrow {
+    width: 9px;
+    height: 9px;
+    fill: currentColor;
+}
+
+.btn--white .btn__icon {
+    background: var(--color-braun);
+    color: var(--color-white);
+}
+
+.btn--braun .btn__icon {
+    background: var(--color-white);
+    color: var(--color-braun);
+}
+
+.btn--white:hover {
+    background: linear-gradient(180deg, #D4B26F -66.86%, #A87C25 180.08%);
+    color: var(--color-white);
+}
+
+.btn--braun:hover {
+    background: var(--color-white);
+    color: var(--color-braun);
+}
+
+.btn--white:hover .btn__icon {
+    background: var(--color-white);
+    color: var(--color-braun);
+}
+
+.btn--braun:hover .btn__icon {
+    background: var(--color-braun);
+    color: var(--color-white);
+}
+
+/*HEADER*/
+.header {
+    padding: 18px 0;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header__container {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;   
+    width: 100%;
+}
+
+.header__top {
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.link-yandex {
+    padding: 4px;    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(240, 231, 223, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 34px;
+    width: 166px;
+    height: 48px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.link-yandex:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.link-yandex__icon {
+    width: 44px;
+    height: 44px;
+}
+
+.link-yandex__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.link-yandex__text {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.header__text {    
+    font-weight: normal;
+    font-size: 0.75rem;
+    max-width: 210px;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.link-social {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0px 2px 2px rgba(58, 58, 58, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 90px;
+    transition: background 0.3s ease-in-out;
+}
+
+.link-social:hover {
+    background: var(--color-white);    
+}
+
+.link-social__icon  {
+    width: 20px;
+    height: 20px;
+    transition: fill 0.3s ease-in-out;    
+}
+
+.link-social__icon-wa, .link-social__icon-tg {
+    fill: var(--color-white)
+}
+
+.link-social:hover .link-social__icon-wa {
+    fill: #75B252;
+} 
+
+.link-social:hover .link-social__icon-tg {
+    fill: #539CE0;
+} 
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-phone {
+    margin-left: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-family: 'KyivType Sans';
+}
+
+.link-phone--number {
+    font-weight: 500;    
+}
+
+.link-phone--text {    
+    font-size: 0.75rem;
+    font-weight: normal;    
+}
+
+/*MENU*/
+.nav {
+    width: 100%;
+    position: relative;
+}
+
+.top-menu {
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.top-menu__item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'KyivType Sans';
+    font-weight: 500;
+    font-size: 0.82rem;
+}
+
+.btn__menu {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.top-menu__icon {
+    width: 24px;
+    height: 24px;
+}
+
+/*MAIN*/
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+    width: 100%;  
+    max-width: 1440px;
+}
+
+.hero {     
+    height: 820px;  
+    border-radius: 0px 0px 16px 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(0deg, rgba(70, 50, 40, 0.3), rgba(70, 50, 40, 0.3)), url(../images/Hero_bg.png);    
+}
+
+.hero__container {
+    padding-top: 205px;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    max-width: 63%;
+}
+
+.hero__title {
+    position: relative;
+    font-size: 60px;
+    line-height: 94%;
+    letter-spacing: -0.04em;   
+    font-size: 60px;
+    font-weight: 375;
+    line-height: 94%;
+}
+
+.hero__title::after {
+    content: '';
+    position: absolute;
+    bottom: -27px;
+    right: 84px;
+    background-image: url(../images/icon/hero_arrow.svg);
+    width: 178px;
+    height: 18px;
+}
+
+.hero__descr {
+    font-family: 'KyivType Sans';
+    font-size: 1.125rem;
+    line-height: 140%;
+    max-width: 53%;
+}
+
+.hero__btn {
+    margin-top: 8px;
+}
