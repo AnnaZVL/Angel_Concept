@@ -58,107 +58,151 @@
                 d="M8.85345 8.66035C8.85345 8.77081 8.76391 8.86035 8.65345 8.86035H7.65404C7.54358 8.86035 7.45404 8.77081 7.45404 8.66035V3.07952C7.45404 2.90134 7.23861 2.81211 7.11262 2.9381L1.40503 8.64569C1.32693 8.72379 1.20029 8.72379 1.12219 8.64569L0.414798 7.9383C0.336693 7.86019 0.336693 7.73356 0.414798 7.65545L6.12238 1.94787C6.24838 1.82187 6.15914 1.60645 5.98096 1.60645H0.400134C0.289677 1.60645 0.200134 1.5169 0.200134 1.40645V0.406055C0.200134 0.295598 0.289677 0.206055 0.400134 0.206055H8.65345C8.76391 0.206055 8.85345 0.295598 8.85345 0.406055V8.66035Z" />
         </symbol>
 
-        <symbol id="menu" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.918 10.25L12.418 15.75L6.91797 10.25" stroke="white" stroke-width="1.6" stroke-linecap="square"
-                stroke-linejoin="round" />
+        <symbol id="menu-arrow" width="13" height="14" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.17933 13.3292C6.02312 13.4854 5.76985 13.4854 5.61364 13.3291L5.33135 13.0469C5.17514 12.8906 5.17514 12.6374 5.33135 12.4812L9.52948 8.28305C9.78146 8.03106 9.603 7.6002 9.24664 7.6002H0.569196C0.348282 7.6002 0.169196 7.42112 0.169196 7.2002L0.169196 6.80144C0.169196 6.58052 0.348282 6.40144 0.569196 6.40144H9.24664C9.603 6.40144 9.78146 5.97058 9.52948 5.71859L5.33135 1.52047C5.17514 1.36426 5.17514 1.11099 5.33135 0.954781L5.61364 0.672491C5.76985 0.516281 6.02312 0.516281 6.17933 0.672491L12.2248 6.71798C12.381 6.87419 12.381 7.12745 12.2248 7.28366L6.17933 13.3292Z" />
         </symbol>
+
 
     </svg>
 
     <header class="header">
-        <div class="container header__container">
-            <div class="header__top">
-                <div class="header__left">
-                    <a class="header__yandex link-yandex" href="https://ya.ru/" aria-label="перейти в Яндекс"
-                        target="_blank">
-                        <svg class="link-yandex__icon">
-                            <use href="#yandex"></use>
-                        </svg>
-                        <div class="link-yandex__content">
-                            <span class="link-yandex__title">Рейтинг 4.9</span>
-                            <span class="link-yandex__text">135 отзывов</span>
-                        </div>
-                    </a>
-                    <span class="header__text">Салон красоты премиального
-                        уровня в Ставрополе</span>
-                </div>
-                <div class="header__logo">
-                    <img src="./images/Logo.png" alt="Логотип компании">
-                </div>
-                <div class="header__right">
-                    <div class="header__actions">
-                        <a class="header__link link-social" href="https://wa.me/" aria-label="Связаться с нами в Ватсап"
+        <div class="header__wrapper header__wrapper--opacity ">
+            <div class="container header__container ">
+                <div class="header__top" id="top_opacity">
+                    <div class="header__left">
+                        <a class="header__yandex link-yandex" href="https://ya.ru/" aria-label="перейти в Яндекс"
                             target="_blank">
-                            <svg class="link-social__icon link-social__icon-wa">
-                                <use href="#whatsapp"></use>
-                            </svg></a>
-                        <a class="header__link link-social" href="https://t.me/"
-                            aria-label="Связаться с нами в Телеграм" target="_blank">
-                            <svg class="link-social__icon link-social__icon-tg">
-                                <use href="#telegram"></use>
-                            </svg></a>
-
-                        <a class="header__link link-phone" href="tel:79100044636">
-                            <span class="link-phone__number">+7 910 004-46-36</span>
-                            <span class="link-phone__text">Пн–ВС, с 10:00–22:00</span>
-                        </a>
-                    </div>
-                    <button class="btn header__btn btn--record btn--white" aria-label="Записаться на прием">
-                        <span class="btn__text">Запись на приём</span>
-                        <div class="btn__icon">
-                            <svg class="btn__arrow">
-                                <use href="#arrow"></use>
+                            <svg class="link-yandex__icon">
+                                <use href="#yandex"></use>
                             </svg>
+                            <div class="link-yandex__content">
+                                <span class="link-yandex__title">Рейтинг 4.9</span>
+                                <span class="link-yandex__text">135 отзывов</span>
+                            </div>
+                        </a>
+                        <span class="header__text">Салон красоты премиального
+                            уровня в Ставрополе</span>
+                    </div>
+
+                    <div class="header__logo">
+                        <img src="./images/Logo_op.png" alt="Логотип компании">
+                    </div>
+                    <div class="header__right">
+                        <div class="header__actions">
+                            <a class="header__link link-social link-social--opacity" href="https://wa.me/"
+                                aria-label="Связаться с нами в Ватсап" target="_blank">
+                                <svg class="link-social__icon link-social__icon--opacity ">
+                                    <use href="#whatsapp"></use>
+                                </svg></a>
+                            <a class="header__link link-social link-social--opacity" href="https://t.me/"
+                                aria-label="Связаться с нами в Телеграм" target="_blank">
+                                <svg class="link-social__icon link-social__icon--opacity ">
+                                    <use href="#telegram"></use>
+                                </svg></a>
+
+                            <a class="header__link link-phone link-phone--opacity" href="tel:79100044636">
+                                <span class="link-phone__number">+7 910 004-46-36</span>
+                                <span class="link-phone__text">Пн–ВС, с 10:00–22:00</span>
+                            </a>
                         </div>
-                    </button>
+                        <button class="btn header__btn btn--record btn--white" aria-label="Записаться на прием">
+                            <span class="btn__text">Запись на приём</span>
+                            <div class="btn__icon">
+                                <svg class="btn__arrow">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </div>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__wrapper header__wrapper--color ">
+            <div class="container header__container">
+                <div class="header__top">
+                    <nav class="nav">
+                        <button class="btn btn__nav" aria-label="Открыть меню" id="burger">
+                            <div class="btn__nav--burger">
+                                <span class="btn__nav--line"></span>
+                                <span class="btn__nav--line"></span>
+                            </div>
+                            <span class="btn__nav--text">МЕНЮ</span>
+                        </button>
+                        <ul class="nav__menu burger-menu">
+                            <li class="burger-menu__item">
+                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">SPA & Релакс</a>
+                            </li>
+                            <li class="burger-menu__item">
+                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">О центре</a>
+                            </li>
+                            <li class="burger-menu__item">
+                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">Контаткты</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__logo">
+                        <img src="./images/Logo.png" alt="Логотип компании">
+                    </div>
+                    <div class="header__right">
+                        <div class="header__actions">
+                            <a class="header__link link-social" href="https://wa.me/"
+                                aria-label="Связаться с нами в Ватсап" target="_blank">
+                                <svg class="link-social__icon link-social__icon--wa">
+                                    <use href="#whatsapp"></use>
+                                </svg></a>
+                            <a class="header__link link-social" href="https://t.me/"
+                                aria-label="Связаться с нами в Телеграм" target="_blank">
+                                <svg class="link-social__icon link-social__icon--tg">
+                                    <use href="#telegram"></use>
+                                </svg></a>
+
+                            <a class="header__link link-phone" href="tel:79100044636">
+                                <span class="link-phone__number">+7 910 004-46-36</span>
+                                <span class="link-phone__text">Пн–ВС, с 10:00–22:00</span>
+                            </a>
+                        </div>
+                        <button class="btn header__btn btn--record btn--braun" aria-label="Записаться на прием">
+                            <span class="btn__text">Запись на приём</span>
+                            <div class="btn__icon">
+                                <svg class="btn__arrow">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
 
                 </div>
             </div>
-            <nav class="header__nav nav">
-                <ul class="nav__menu top-menu">
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">все услуги</a>
-                        <button class="btn btn__menu">
-                            <svg class="top-menu__icon">
-                                <use href="#menu"></use>
-                            </svg>
-                        </button>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">О центре</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">косметология</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">SPA & Thai</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">Велнесс-терапия</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">SPA &
-                            Релакс</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">коррекция
-                            фигуры</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">Журнал</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">сертификаты</a>
-                    </li>
-                    <li class="top-menu__item">
-                        <a href="#" class="top-menu__link" aria-label="Перейти к разделу">контакты</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
+        <div class="nav__wrapper" id="nav">
+            <ul class="nav__menu--bottom menu">
+                <li class="menu__item">
+                    <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <span class="menu__text">SPA & Релакс</span>
+                        <svg class="menu__icon">
+                            <use href="#menu-arrow"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li class="menu__item">
+                    <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <span class="menu__text">Wellness-терапия</span>
+                        <svg class="menu__icon">
+                            <use href="#menu-arrow"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+        
+
     </header>
     <main class="main">
-        <div class="hero">
+        <section class="hero">
             <div class="container hero__container">
                 <div class="hero__content">
                     <h1 class="hero__title">Ангел Concept &mdash;
@@ -176,7 +220,8 @@
                 </div>
 
             </div>
-        </div>
+        </section>
+        <section class="services"></section>
     </main>
     <script defer src="./js/script.js"></script>
 </body>
