@@ -53,17 +53,20 @@
                 d="M17.7873 4.57286L15.0954 16.8721C14.8923 17.7401 14.3627 17.9561 13.6101 17.5472L9.50853 14.619L7.52943 16.4631C7.31041 16.6753 7.12724 16.8528 6.70513 16.8528L6.99981 12.8058L14.6016 6.15077C14.9321 5.86528 14.5299 5.70711 14.0879 5.9926L4.6902 11.7255L0.644388 10.4987C-0.235655 10.2325 -0.251583 9.64609 0.827564 9.23714L16.6524 3.3306C17.3851 3.0644 18.0262 3.48878 17.7873 4.57286Z" />
         </symbol>
 
-        <symbol id="arrow" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="btn-arrow" width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
             <path
-                d="M8.85345 8.66035C8.85345 8.77081 8.76391 8.86035 8.65345 8.86035H7.65404C7.54358 8.86035 7.45404 8.77081 7.45404 8.66035V3.07952C7.45404 2.90134 7.23861 2.81211 7.11262 2.9381L1.40503 8.64569C1.32693 8.72379 1.20029 8.72379 1.12219 8.64569L0.414798 7.9383C0.336693 7.86019 0.336693 7.73356 0.414798 7.65545L6.12238 1.94787C6.24838 1.82187 6.15914 1.60645 5.98096 1.60645H0.400134C0.289677 1.60645 0.200134 1.5169 0.200134 1.40645V0.406055C0.200134 0.295598 0.289677 0.206055 0.400134 0.206055H8.65345C8.76391 0.206055 8.85345 0.295598 8.85345 0.406055V8.66035Z" />
+                d="M7.79956 7.39922C7.79956 7.62013 7.62047 7.79922 7.39956 7.79922H7.00034C6.77943 7.79922 6.60034 7.62013 6.60034 7.39922V3.21217C6.60034 2.85581 6.16949 2.67734 5.9175 2.92933L1.40662 7.4402C1.25041 7.59641 0.997146 7.59641 0.840937 7.4402L0.558966 7.15823C0.402756 7.00202 0.402756 6.74876 0.558966 6.59255L5.06984 2.08167C5.32183 1.82968 5.14336 1.39883 4.787 1.39883H0.599951C0.379038 1.39883 0.199951 1.21974 0.199951 0.998827V0.599608C0.199951 0.378694 0.379037 0.199608 0.599951 0.199608H7.39956C7.62047 0.199608 7.79956 0.378694 7.79956 0.599608V7.39922Z" />
+        </symbol>
+
+        <symbol id="arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12.9816 1.8195C13.0594 1.89763 13.0589 2.02393 12.9809 2.10193L6.72814 8.35472C6.68698 8.3957 6.6328 8.41222 6.57898 8.40996C6.52754 8.41025 6.47604 8.3925 6.43673 8.35334L0.182647 2.09917C0.104747 2.02105 0.105247 1.89477 0.183347 1.81674L1.31445 0.685646C1.39248 0.607617 1.51877 0.607103 1.59683 0.684956L6.30028 5.38846C6.45649 5.54467 6.70976 5.54467 6.86597 5.38846L11.5667 0.687724C11.6448 0.609653 11.7717 0.609726 11.8498 0.687724L12.9816 1.8195Z" />
         </symbol>
 
         <symbol id="menu-arrow" width="13" height="14" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M6.17933 13.3292C6.02312 13.4854 5.76985 13.4854 5.61364 13.3291L5.33135 13.0469C5.17514 12.8906 5.17514 12.6374 5.33135 12.4812L9.52948 8.28305C9.78146 8.03106 9.603 7.6002 9.24664 7.6002H0.569196C0.348282 7.6002 0.169196 7.42112 0.169196 7.2002L0.169196 6.80144C0.169196 6.58052 0.348282 6.40144 0.569196 6.40144H9.24664C9.603 6.40144 9.78146 5.97058 9.52948 5.71859L5.33135 1.52047C5.17514 1.36426 5.17514 1.11099 5.33135 0.954781L5.61364 0.672491C5.76985 0.516281 6.02312 0.516281 6.17933 0.672491L12.2248 6.71798C12.381 6.87419 12.381 7.12745 12.2248 7.28366L6.17933 13.3292Z" />
         </symbol>
-
-
     </svg>
 
     <header class="header">
@@ -110,7 +113,7 @@
                             <span class="btn__text">Запись на приём</span>
                             <div class="btn__icon">
                                 <svg class="btn__arrow">
-                                    <use href="#arrow"></use>
+                                    <use href="#btn-arrow"></use>
                                 </svg>
                             </div>
                         </button>
@@ -119,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <div class="header__wrapper header__wrapper--color ">
+        <div class="header__wrapper header__wrapper--color header__wrapper--hidden">
             <div class="container header__container">
                 <div class="header__top">
                     <nav class="nav">
@@ -168,7 +171,7 @@
                             <span class="btn__text">Запись на приём</span>
                             <div class="btn__icon">
                                 <svg class="btn__arrow">
-                                    <use href="#arrow"></use>
+                                    <use href="#btn-arrow"></use>
                                 </svg>
                             </div>
                         </button>
@@ -177,30 +180,197 @@
                 </div>
             </div>
         </div>
-        <div class="nav__wrapper" id="nav">
-            <ul class="nav__menu--bottom menu">
-                <li class="menu__item">
-                    <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
-                        <span class="menu__text">SPA & Релакс</span>
-                        <svg class="menu__icon">
-                            <use href="#menu-arrow"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li class="menu__item">
-                    <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
-                        <span class="menu__text">Wellness-терапия</span>
-                        <svg class="menu__icon">
-                            <use href="#menu-arrow"></use>
-                        </svg>
-                    </button>
-                </li>
-            </ul>
-
+        <div class="menu__wrapper" id="menu-top">
+            <div class="container menu-top__container">
+                <ul class="menu__top menu-top">
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" id="top-arrow" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">все услуги</span>
+                            <svg class="menu-top__icon">
+                                <use href="#arrow"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">О центре</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">косметология</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">SPA & Thai</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">велнесс-терапия</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">SPA & Релакс</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">коррекция фигуры</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">Журнал</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">сертификаты</span>
+                        </a>
+                    </li>
+                    <li class="menu-top__item">
+                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
+                            <span class="menu-top__text">Контакты</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-
+        <div class="menu__inner" id="menu-bottom">
+            <div class="container menu-bottom__container">
+                <ul class="menu__bottom menu">
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn menu__btn--active" aria-label="Открыть подраздел">
+                            <span class="menu__text">SPA & Релакс</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">Wellness-терапия</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">Коррекция фигуры</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">Косметология лица</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">Beauty-услуги</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">Дополнительно</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">О компании</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="menu__item">
+                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                            <span class="menu__text">О центре</span>
+                            <svg class="menu__icon">
+                                <use href="#menu-arrow"></use>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="menu_sub-menu sub-menu">
+                    <li class="sub-menu__item">
+                        Европейские массажи
+                    </li>
+                    <li class="sub-menu__item sub-menu__item--active">
+                        Женские ритуалы
+                    </li>
+                    <li class="sub-menu__item">
+                        Девичники
+                    </li>
+                    <li class="sub-menu__item">
+                        Для двоих
+                    </li>
+                    <li class="sub-menu__item">
+                        Мужской уход
+                    </li>
+                </ul>
+                <div class="menu__cards">
+                    <div class="menu__card card">
+                        <div class="card__img">
+                            <img src="./images/cards/card_1.png" alt="Фото процедуры">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__title">Тайский массаж</p>
+                            <p class="card__descr">Запускаем дыхание и гибкость через мягкое давление и растяжку.</p>
+                            <button class="btn card__btn">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                    <div class="nav__card card">
+                        <div class="card__img">
+                            <img src="./images/cards/card_2.png" alt="Фото процедуры">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__title">Балийский массаж</p>
+                            <p class="card__descr">Глубоко прогреваем тело, снимаем мышечные зажимы, выравниваем
+                                дыхание.</p>
+                            <button class="btn card__btn">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                    <div class="nav__card card">
+                        <div class="card__img">
+                            <img src="./images/cards/card_3.png" alt="Фото процедуры">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__title">Косметология лица</p>
+                            <p class="card__descr">Косметология: уходы, инъекции, лифтинг</p>
+                            <button class="btn card__btn">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                    <div class="nav__card card">
+                        <div class="card__img">
+                            <img src="./images/cards/card_4.png" alt="Фото процедуры">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__title">Коррекция фигуры</p>
+                            <p class="card__descr">Общий уход с мягкими техниками и вниманием к возрасту.</p>
+                            <button class="btn card__btn">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+
     <main class="main">
         <section class="hero">
             <div class="container hero__container">
@@ -213,7 +383,7 @@
                         <span class="btn__text">подробнее об услугах</span>
                         <div class="btn__icon">
                             <svg class="btn__arrow">
-                                <use href="#arrow"></use>
+                                <use href="#btn-arrow"></use>
                             </svg>
                         </div>
                     </button>
