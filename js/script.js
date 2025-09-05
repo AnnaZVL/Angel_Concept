@@ -63,10 +63,16 @@ window.addEventListener('scroll', () => {
     if (currentScrollY > lastScrollY && currentScrollY > 100) {    
         headerWrappers[0].classList.add('header__wrapper--hidden');
         headerWrappers[1].classList.remove('header__wrapper--hidden');
-    } else if(!isOpenMenuBottom || !isOpenMenu) {        
+        btnArrow.classList.remove('open');
+        menuBottom.classList.remove('open'); 
+        btnMenu.classList.remove('open');
+        menuTop.classList.remove('open');
+        isOpenMenuBottom = false;
+        isOpenMenu = false;
+    } else if(!isOpenMenuBottom || !isOpenMenu) {              
         headerWrappers[0].classList.remove('header__wrapper--hidden');
-        headerWrappers[1].classList.add('header__wrapper--hidden');       
-    }
+        headerWrappers[1].classList.add('header__wrapper--hidden');      
+    } 
 
     lastScrollY = currentScrollY;
 });
@@ -115,8 +121,7 @@ function setActiveSlide(id) {
     });
 }
 
-function changeHeroImage(id) {
-    console.log('ID', id);
+function changeHeroImage(id) {    
     const heroImage = document.getElementById('hero-bg');    
 
     const newImage = new Image();
