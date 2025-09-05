@@ -70,3 +70,77 @@ window.addEventListener('scroll', () => {
 
     lastScrollY = currentScrollY;
 });
+
+// Слайдер карточек
+const cardsSlide = document.querySelectorAll('[data-card]')
+let activeCard = 1;
+const heroImages = [
+    {
+        id: 1,
+        src: './images/slides/slide_1.png'
+    },
+    {
+        id: 2,
+        src: './images/slides/slide_2.png'
+    },
+    {
+        id: 3,
+        src: './images/slides/slide_3.png'
+    },
+     {
+        id: 4,
+        src: './images/slides/slide_4.png'
+    },
+     {
+        id: 5,
+        src: './images/slides/slide_5.png'
+    },
+    {
+        id: 6,
+        src: './images/slides/slide_6.png'
+    },
+]
+function setActiveSlide(id) {
+    cardsSlide.forEach(card => {
+        const cardId = +card.dataset.card;
+        if (id === cardId) {
+            card.classList.add('slide--active');
+            card.classList.remove('slide--def');
+        } else {
+            card.classList.remove('slide--active');
+            card.classList.add('slide--def');
+        }
+        changeHeroImage(id)
+        activeCard = cardId;     
+    });
+}
+
+function changeHeroImage(id) {
+    console.log('ID', id);
+    const heroImage = document.getElementById('hero-bg');    
+
+    const newImage = new Image();
+    const newSrc = heroImages.find(img => img.id === id);
+   
+    newImage.src = newSrc.src
+    
+    newImage.onload = function() {        
+        heroImage.style.opacity = '0';
+        setTimeout(() => {
+            heroImage.src = newImage.src;
+            heroImage.style.opacity = '1';
+        }, 300);
+    };
+}
+
+cardsSlide.forEach(card => {
+    const btn = card.querySelector('.slide__btn');
+    const id = +card.dataset.card;    
+
+    btn.addEventListener('click', () => { 
+        setActiveSlide(id)
+    })
+
+})
+
+setActiveSlide(1)
