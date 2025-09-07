@@ -92,7 +92,7 @@ window.addEventListener('scroll', () => {
 
 // Слайдер карточек
 const cardsSlide = document.querySelectorAll('[data-card]')
-let activeCard = 1;
+
 const heroImages = [
     {
         id: 1,
@@ -101,27 +101,27 @@ const heroImages = [
     },
     {
         id: 2,
-        src: './images/slides/slide_2.png',
+        src: './images/slides/slide_2.webp',
         text: `Коррекция фигуры и&nbsp;силуэта`,
     },
     {
         id: 3,
-        src: './images/slides/slide_3.png',
+        src: './images/slides/slide_3.webp',
         text: `SPA и&nbsp;европейские массажи`,
     },
      {
         id: 4,
-        src: './images/slides/slide_4.png',
+        src: './images/slides/slide_4.webp',
         text: `Велнес-программы и&nbsp;флоатация`,
     },
      {
         id: 5,
-        src: './images/slides/slide_5.png',
+        src: './images/slides/slide_5.webp',
         text: `Beauty-услуги: волосы, ногти, макияж`,
     },
     {
         id: 6,
-        src: './images/slides/slide_6.png',
+        src: './images/slides/slide_6.webp',
         text: `Тайские и&nbsp;балийские массажи`,
     },
 ]
@@ -147,13 +147,10 @@ function changeSlide(id) {
     title.innerHTML = currentSlide.text;
 
     cardsSlide.forEach(card => {
-            if (+card.dataset.card !== currentSlideId) {
-                console.log('NO', +card.dataset.card !== currentSlideId, +card.dataset.card, currentSlideId);
+            if (+card.dataset.card !== currentSlideId) {               
                 card.classList.remove('slide--active') 
                 card.classList.add('slide--def')  
             } else {
-
-                console.log('OK', +card.dataset.card, currentSlideId);
                 card.classList.remove('slide--def')   
                 card.classList.add('slide--active') 
             }
@@ -162,17 +159,34 @@ function changeSlide(id) {
 
 changeSlide(1)
 
-cardsSlide.forEach(card => {
-    const btn = card.querySelector('.slide__btn');
-    
-    btn.addEventListener('click', (e) => {   
-        
-          
+cardsSlide.forEach(card => {    
+    card.addEventListener('click', (e) => {             
         const id = +card.dataset.card;   
         
-        changeSlide(id)
-        
+        changeSlide(id);           
+    })
+})
 
-            
+const items = document.querySelectorAll('.menu-mobile__item')
+
+items.forEach(el => {
+    const btn = el.querySelector('.menu-mobile__icon');
+    const inner = el.querySelector('.menu-mobile__inner');
+
+    if (btn)
+    btn.addEventListener('click', () => {
+        items.forEach(openItem => {
+            if (openItem !== el) {   
+                setTimeout(() => {             
+                    openItem.classList.toggle('open');
+                    openItem.querySelector('.menu-mobile__inner').classList.toggle('hidden');   
+                 }, 500)             
+            }
+        });
+        setTimeout(() => {
+            el.classList.toggle('open');
+            inner.classList.toggle('hidden');
+        }, 500)
+        
     })
 })
