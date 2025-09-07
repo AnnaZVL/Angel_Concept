@@ -52,8 +52,8 @@ img {
 
 @font-face {
     font-family: 'GT Eesti Pro Text';
-    src: url(../fonts/GTEestiProText-Regular.woff) format('woff'),
-        url(../fonts/GTEestiProText-Regular.woff2) format('woff2');
+    src: url('../fonts/GTEestiProText-Regular.woff2') format('woff2'),
+        url('../fonts/GTEestiProText-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -61,8 +61,8 @@ img {
 
 @font-face {
     font-family: 'GT Eesti Pro Text';
-    src: url(../fonts/GTEestiProText-Medium.woff) format('woff'),
-        url(../fonts/GTEestiProText-Medium.woff2) format('woff2');
+    src: url('../fonts/GTEestiProText-Medium.woff2') format('woff2'),
+        url('../fonts/GTEestiProText-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -70,50 +70,59 @@ img {
 
 @font-face {
     font-family: 'GT Eesti Pro Text';
-    src: url(../fonts/GTEestiProText-Bold.woff) format('woff'),
-        url(../fonts/GTEestiProText-Bold.woff2) format('woff2');
+    src: url('../fonts/GTEestiProText-Bold.woff2') format('woff2'),
+        url('../fonts/GTEestiProText-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'KyivType Sans';
-    src: url(../fonts/KyivTypeSans-Regular.woff) format('woff'),
-        url(../fonts/KyivTypeSans-Regular.woff2) format('woff2');
+    font-family: 'KyivType Sans', sans-serif;
+    src: url('../fonts/KyivTypeSans-Light.woff2') format('woff2'),
+        url('../fonts/KyivTypeSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;    
+} 
+
+
+@font-face {
+    font-family: 'KyivType Sans', sans-serif;
+    src: url('../fonts/KyivTypeSans-Regular.woff2') format('woff2'), 
+    url('../fonts/KyivTypeSans-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: swap;    
 }
 
 @font-face {
-    font-family: 'KyivType Sans';
-    src: url(../fonts/KyivTypeSans-Medium.woff) format('woff'),
-        url(../fonts/KyivTypeSans-Medium.woff2) format('woff2');
+    font-family: 'KyivType Sans', sans-serif;
+    src: url('../fonts/KyivTypeSans-Medium.woff2') format('woff2'),
+    url('../fonts/KyivTypeSans-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: swap;    
 }
 
 @font-face {
-    font-family: 'KyivType Sans';
-    src: url(../fonts/KyivTypeSans-Bold.woff) format('woff'),
-        url(../fonts/KyivTypeSans-Bold.woff2) format('woff2');
+    font-family: 'KyivType Sans', sans-serif;
+    src: url('../fonts/KyivTypeSans-Bold.woff2') format('woff2'),
+        url('../fonts/KyivTypeSans-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+    font-display: swap;    
 }
 
 body {
     margin: 0 auto;
     font-family: 'GT Eesti Pro Text', sans-serif;
     font-weight: normal;
-    font-size: 0.875rem;
-    line-height: 124%;
-    letter-spacing: -0.01em;
+    font-size: 0.875rem;    
+    line-height: 1.15;
+    letter-spacing: -0.01em;    
     color: var(--color-white);
-    background-color: var(--color-bg);
-    height: 100vh;
+    background-color: var(--color-bg);    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +146,7 @@ body {
     color: var(--color-white);    
     border: 1px solid transparent;
     background: transparent;
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;    
     font-weight: 500;   
     font-size: 0.81rem;
     line-height: 100%; 
@@ -146,14 +155,13 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-
 .btn--record {
     padding: 8px 18px;
     gap: 8px;    
     border-radius: 999px;  
     background: transparent;   
-    text-transform: uppercase;
-    height: 56px;
+    text-transform: uppercase;    
+    font-size: 0.875rem;
 }    
 
 .btn--white {   
@@ -167,7 +175,7 @@ body {
 }
 
 .btn--white:hover {
-    background: linear-gradient(180deg, #D4B26F -66.86%, #A87C25 180.08%);
+    background: var(--color-braun); 
     color: var(--color-white);
 }
 
@@ -228,30 +236,25 @@ body {
 .header__wrapper {
     width: 100%;
     background: var(--color-bg);
-    position: relative;
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.header__wrapper--opacity {    
-    background-color: transparent;
-}
-
-.header__wrapper--color {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 200;
-    width: 100%;
-    transform: translateY(0%);
-}
-
-.header__wrapper--hidden {
+    inset: 0;
+    height: 70px;
+    z-index: 0;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-100%);
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+.header.color {
+    padding: 0;
+}
+
+.header.color .header__wrapper {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+} 
 
 .header__container {    
     display: flex;
@@ -268,13 +271,37 @@ body {
     align-items: center;
     gap: 5px;
     width: 100%;
-    position: relative;        
+    height: 104px;
+    position: relative; 
+    z-index: 10;       
+}
+
+.header.color .header__top {
+    height: 70px;
 }
 
 .header__left {
+    position: relative;
+}
+
+.header__left--inner {
     display: flex;
     align-items: center;
-    gap: 12px;    
+    gap: 12px; 
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+    transition: background 0.3s ease-in-out;
+}
+
+.header__left--inner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
 }
 
 .link-yandex {
@@ -283,16 +310,16 @@ body {
     align-items: center;
     gap: 8px;
     background: rgba(240, 231, 223, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.6);   
     border-radius: 34px;
     width: 166px;
     height: 48px;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.link-yandex:hover {
+.link-yandex:hover, .link-yandex.color  {
     background: var(--color-white);
-    color: var(--color-black);
+    color: var(--color-text);
 }
 
 .link-yandex__icon {
@@ -305,28 +332,99 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
+    font-family: 'KyivType Sans', sans-serif;
+    transition: color 0.3s ease-in-out;
 }
 
 .link-yandex__text {
     font-weight: normal;
     font-size: 12px;
+    opacity: 0.4;    
 }
 
 .header__text {    
-    font-weight: normal;
+    font-weight: 300;
     font-size: 0.75rem;
     max-width: 210px;
+    font-family: 'KyivType Sans', sans-serif;
+    opacity: 0.4;
+}
+
+.header__text.color {
+    color: var(--color-text);
 }
 
 .header__logo {
-    display: flex;
+    position: relative;
+    display: flex; 
+    width: 90px;
+    height: 70px;  
+}
+
+.header__logo.small {
+    height: 30px;
+}
+
+.header__logo--img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.header__logo--img:first-child {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header__logo--img.small {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header__logo--img.color {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header__logo.color .header__logo--img:first-child,
+.header__logo.color .header__logo--img.small {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header__logo.color .header__logo--img.color {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header__logo.small .header__logo--img:first-child,
+.header__logo.small .header__logo--img.color {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header__logo.small .header__logo--img.small {
+    opacity: 1;
+    visibility: visible;
 }
 
 .header__right {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 24px;
     justify-self: end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__right.visible{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
 }
 
 .link-social {    
@@ -385,33 +483,55 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     color: var(--color-text);
+    transition: transform 0.3s ease-in-out; 
+}
+
+.link-phone:hover {
+    transform: scale(1.1);
 }
 
 .link-phone--opacity {
     color: var(--color-white);
 }
 
-.link-phone--number {
+.link-phone__number {
     font-weight: 500;    
 }
 
-.link-phone--text {    
+.link-phone__text {    
     font-size: 0.75rem;
-    font-weight: normal;    
+    font-weight: normal; 
+    opacity: 0.4;   
+}
+
+.header__nav {
+    position: relative;
+    z-index: 20;
 }
 
 /*MENU*/
-.nav {
-    position: relative;    
+.header__burger {
+    position: absolute;     
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;        
+    gap: 8px;   
+    transition: all 0.3s ease-in-out;     
 }
 
-.btn__nav {
+.header__burger.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+}
+
+.burger__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -424,9 +544,11 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     color: var(--color-text);
+    position: relative;
+    z-index: 1000;
 }
 
-.btn__nav--burger {
+.burger__btn--inner {
     padding: 8px 4px;
     display: flex;
     flex-direction: column;
@@ -436,7 +558,7 @@ body {
     height: 24px;
 }
 
-.btn__nav--line {
+.burger__btn--line {
     display: block;
     width: 100%;
     height: 2px;  
@@ -444,11 +566,11 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.btn__nav.open .btn__nav--line:nth-child(1) {    
+.burger__btn.open .burger__btn--line:nth-child(1) {    
     transform: rotate(45deg);  
 }
 
-.btn__nav.open .btn__nav--line:nth-child(2) {    
+.burger__btn.open .burger__btn--line:nth-child(2) {    
     transform: translateY(-7px) rotate(-45deg);    
 }
 
@@ -463,7 +585,7 @@ body {
 
 .burger-menu__link { 
     display: inline-block; 
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-weight: 500;
     font-size: 0.81rem;
     color: var(--color-text);
@@ -502,13 +624,12 @@ body {
     padding: 24px;   
     margin: 0 auto;
     position: absolute;
-    top: 100%;
+    top: 0%;
     left: 0;
     right: 0;
-    transform: translateY(-200%);
-    z-index: 100;  
-    opacity: 0;
-    max-width: 1440px;
+    transform: translateY(-100%);
+    z-index: 0;  
+    opacity: 0; 
     width: 100%;
     pointer-events: none;
     background-color: var(--color-bg);
@@ -517,7 +638,8 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.menu-bottom__container {       
+.menu-bottom__container {   
+    padding-top: 178px;    
     display: grid;
     grid-template-columns: 22% 13% auto;
     gap: 48px;
@@ -528,24 +650,41 @@ body {
 
 .menu__inner.open {
     opacity: 1;
-    transform: translateY(7%);
+    transform: translateY(0%);
     pointer-events: all;
 }
 
-.menu-top {
-    padding: 4px 0px;
+.header__nav {
+    width: 100%;
+}
+
+.menu-top {    
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4px; 
-    border: 1px solid rgba(27, 27, 27, 0.9);
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-right-color: transparent;
+    border-left-color: transparent;
+    position: relative;
+    z-index: 20;
+    transition: all 0.5s ease-in-out;
+}
+
+.header.color .menu-top{
+    transform: translateY(-200%);    
+    opacity: 0;     
+}
+
+.menu-top.color {
+    border-color: rgba(0, 0, 0, 0.12);
     border-right-color: transparent;
     border-left-color: transparent;
 }
 
 .menu-top__item {
-    padding: 12px 8px;  
-    
+    padding: 12px 8px;      
 }
 
 .menu-top__link {
@@ -555,13 +694,22 @@ body {
     gap: 4px;
     width: 100%;  
     height: 24px;  
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-weight: 500;
-    font-size: 0.81rem;
+    font-size: 0.815rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-text);
+    color: var(--color-white);
     cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-top__link.color {
+    color: var(--color-text);
+}
+
+.menu-top__link:hover, .menu-top__link.active {
+    color: var(--color-braun);
 }
 
 .menu-top__icon {
@@ -594,7 +742,7 @@ body {
     justify-content: space-between;    
     gap: 8px;
     text-transform: uppercase;
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
@@ -640,7 +788,7 @@ body {
 
 .sub-menu__item {
     padding: 8px 0px;    
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-weight: 500;
     font-size: 0.875rem;
     color: var(--color-text);
@@ -687,7 +835,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-size: 0.94rem;
     line-height: 144%;
     color: var(--color-black);
@@ -741,8 +889,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;  
-    width: 100%;  
-    max-width: 1440px;
+    width: 100%;      
 }
 
 .hero {     
@@ -804,7 +951,7 @@ body {
 }
 
 .hero__descr {
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-size: 1.125rem;
     line-height: 140%;
     max-width: 53%;
@@ -910,7 +1057,7 @@ body {
 }
 
 .slide__descr {
-    font-family: 'KyivType Sans';
+    font-family: 'KyivType Sans', sans-serif;
     font-weight: 400;
     font-size: 0.75rem;   
     transition: all 0.3s ease-in-out;

@@ -1,77 +1,90 @@
-// MENU
-const btnMenu = document.getElementById('burger');
 const btnArrow = document.getElementById('top-arrow');
-const menuTop = document.getElementById('menu-top');
 const menuBottom = document.getElementById('menu-bottom');
+const linkSubmenu = document.querySelector('.menu-top__item--submenu');
+const listElemSubmenu = document.querySelectorAll('[data-submenu]');
+const headerRights = document.querySelectorAll('.header__right')
+const inner = document.getElementById('inner');
+const burgerInner = document.getElementById('burger-inner');
+const logo = document.getElementById('logo');    
+const header =  document.getElementById('header');
+const burger = document.getElementById('burger');
+
+const currentScrollY = window.scrollY;    
 
 let isOpenMenu = false;
 let isOpenMenuBottom = false;
+let lastScrollY = window.scrollY;
+let hasScroll = false;
 
-// // Открытие бургер меню
-document.addEventListener('click', (event) => {
+linkSubmenu.addEventListener('mouseenter', () => {
+    if (hasScroll) return;
+
+    menuBottom.classList.add('open');
+
+    listElemSubmenu.forEach(elem => {    
+        elem.classList.add('color');           
+    })
+
+    headerRights[0].classList.remove('visible');
+    headerRights[1].classList.add('visible');
+    btnArrow.classList.add('open');
+})
+
+menuBottom.addEventListener('mouseleave', (e) => {  
+    if (!menuBottom.contains(e.relatedTarget)) {  
+        menuBottom.classList.remove('open');
+
+        listElemSubmenu.forEach(elem => {        
+            elem.classList.remove('color');
+        })
+
+        headerRights[1].classList.remove('visible');
+        headerRights[0].classList.add('visible');
+        btnArrow.classList.remove('open');
+    }
+})
+
+// Открытие бургер меню
+burger.addEventListener('click', (event) => {  
     const target = event.target;
-    
-    // Клик по бургеру
-    if (target.closest('.btn__nav')) {        
-        if (isOpenMenu) {
-            console.log('1');
-            btnMenu.classList.remove('open');
-            menuTop.classList.remove('open');
-        } else {            
-            btnMenu.classList.add('open');
-            menuTop.classList.add('open');
-        }
-        isOpenMenu = !isOpenMenu;
-    }
-    
-    // Клик по стрелке
-    else if (target.closest('#top-arrow')) {       
-        event.stopPropagation();
-        if (isOpenMenuBottom) {            
-            btnArrow.classList.remove('open');
-            menuBottom.classList.remove('open');
-        } else {            
-            btnArrow.classList.add('open');
-            menuBottom.classList.add('open');
-        }
-        isOpenMenuBottom = !isOpenMenuBottom;
-    }
-    
-    // Клик вне меню
-    else {
-        if (isOpenMenu) {
-            btnMenu.classList.remove('open');
-            menuTop.classList.remove('open');
-            isOpenMenu = false;
-        }
-        if (isOpenMenuBottom) {
-            btnArrow.classList.remove('open');
-            menuBottom.classList.remove('open');
-            isOpenMenuBottom = false;
-        }
-    }
+
+    menuBottom.classList.add('open');
+
+    listElemSubmenu.forEach(elem => {    
+        elem.classList.add('color');           
+    })
+
+    headerRights[0].classList.remove('visible');
+    headerRights[1].classList.add('visible');    
 });
 
 //Смена шапок при скролле
-let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {    
+    const currentScrollY = window.scrollY;     
 
-window.addEventListener('scroll', () => {
-    const headerWrappers = document.querySelectorAll('.header__wrapper');
- 
-    const currentScrollY = window.scrollY;    
-  
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {    
-        headerWrappers[0].classList.add('header__wrapper--hidden');
-        headerWrappers[1].classList.remove('header__wrapper--hidden');
-        btnArrow.classList.remove('open');
-        menuBottom.classList.remove('open'); 
-        btnMenu.classList.remove('open');
-        menuTop.classList.remove('open');
+    if (currentScrollY > lastScrollY && currentScrollY > 100) { 
+        hasScroll = true;
+
+        inner.classList.add('hidden');
+        burgerInner.classList.remove('hidden');
+        logo.classList.add('small');
+        header.classList.add('color');
+
+        headerRights[0].classList.remove('visible');
+        headerRights[1].classList.add('visible');
+
         isOpenMenuBottom = false;
         isOpenMenu = false;
-    } else if(!isOpenMenuBottom || !isOpenMenu) {              
-        headerWrappers[0].classList.remove('header__wrapper--hidden');
-        headerWrappers[1].classList.add('header__wrapper--hidden');      
+    } else if(!isOpenMenuBottom || !isOpenMenu) { 
+        hasScroll = false;
+
+        inner.classList.remove('hidden');
+        burgerInner.classList.add('hidden'); 
+        logo.classList.remove('small') 
+        header.classList.remove('color');  
+        
+        headerRights[1].classList.remove('visible');
+        headerRights[0].classList.add('visible');            
     } 
 
     lastScrollY = currentScrollY;
@@ -83,52 +96,46 @@ let activeCard = 1;
 const heroImages = [
     {
         id: 1,
-        src: './images/slides/slide_1.png'
+        src: './images/slides/slide_1.png',
+        text: `Ангел Concept &mdash;центр премиального ухода и&nbsp;косметологии в&nbsp;Ставрополе`,
     },
     {
         id: 2,
-        src: './images/slides/slide_2.png'
+        src: './images/slides/slide_2.png',
+        text: `Коррекция фигуры и&nbsp;силуэта`,
     },
     {
         id: 3,
-        src: './images/slides/slide_3.png'
+        src: './images/slides/slide_3.png',
+        text: `SPA и&nbsp;европейские массажи`,
     },
      {
         id: 4,
-        src: './images/slides/slide_4.png'
+        src: './images/slides/slide_4.png',
+        text: `Велнес-программы и&nbsp;флоатация`,
     },
      {
         id: 5,
-        src: './images/slides/slide_5.png'
+        src: './images/slides/slide_5.png',
+        text: `Beauty-услуги: волосы, ногти, макияж`,
     },
     {
         id: 6,
-        src: './images/slides/slide_6.png'
+        src: './images/slides/slide_6.png',
+        text: `Тайские и&nbsp;балийские массажи`,
     },
 ]
-function setActiveSlide(id) {
-    cardsSlide.forEach(card => {
-        const cardId = +card.dataset.card;
-        if (id === cardId) {
-            card.classList.add('slide--active');
-            card.classList.remove('slide--def');
-        } else {
-            card.classList.remove('slide--active');
-            card.classList.add('slide--def');
-        }
-        changeHeroImage(id)
-        activeCard = cardId;     
-    });
-}
 
-function changeHeroImage(id) {    
-    const heroImage = document.getElementById('hero-bg');    
+function changeSlide(id) {
+    let currentSlideId = id || 1;
+
+    const currentSlide = heroImages.find(slide => slide.id === currentSlideId);
+
+    const heroImage = document.getElementById('hero-bg');
+    const title = document.getElementById('title');
 
     const newImage = new Image();
-    const newSrc = heroImages.find(img => img.id === id);
-   
-    newImage.src = newSrc.src
-    
+    newImage.src = currentSlide.src
     newImage.onload = function() {        
         heroImage.style.opacity = '0';
         setTimeout(() => {
@@ -136,16 +143,18 @@ function changeHeroImage(id) {
             heroImage.style.opacity = '1';
         }, 300);
     };
+
+    title.innerHTML = currentSlide.text;
 }
+
+changeSlide(1)
 
 cardsSlide.forEach(card => {
     const btn = card.querySelector('.slide__btn');
-    const id = +card.dataset.card;    
-
-    btn.addEventListener('click', () => { 
-        setActiveSlide(id)
-    })
-
+    
+    btn.addEventListener('click', (e) => {         
+            const id = +card.dataset.card;   
+            
+            changeSlide(id)
+        })
 })
-
-setActiveSlide(1)

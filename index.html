@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel_Concept Test</title>
-    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/media.css">
 </head>
@@ -69,29 +68,54 @@
         </symbol>
     </svg>
 
-    <header class="header">
-        <div class="header__wrapper header__wrapper--opacity ">
+    <header class="header" id="header">
+        <div class="header__wrapper" id="header-wrapper"></div>
             <div class="container header__container ">
                 <div class="header__top" id="top_opacity">
                     <div class="header__left">
-                        <a class="header__yandex link-yandex" href="https://ya.ru/" aria-label="перейти в Яндекс"
-                            target="_blank">
-                            <svg class="link-yandex__icon">
-                                <use href="#yandex"></use>
-                            </svg>
-                            <div class="link-yandex__content">
-                                <span class="link-yandex__title">Рейтинг 4.9</span>
-                                <span class="link-yandex__text">135 отзывов</span>
-                            </div>
-                        </a>
-                        <span class="header__text">Салон красоты премиального
-                            уровня в Ставрополе</span>
+                        <div class="header__left--inner" id="inner">
+                            <a class="header__yandex link-yandex" href="https://ya.ru/" data-submenu
+                                aria-label="перейти в Яндекс" target="_blank">
+                                <svg class="link-yandex__icon">
+                                    <use href="#yandex"></use>
+                                </svg>
+                                <div class="link-yandex__content">
+                                    <span class="link-yandex__title">Рейтинг &#8226; 4.9</span>
+                                    <span class="link-yandex__text">135 отзывов</span>
+                                </div>
+                            </a>
+                            <span class="header__text" data-submenu>Салон красоты премиального
+                                уровня в Ставрополе</span>
+                        </div>
+                        <div class="header__burger burger hidden" id="burger-inner">
+                            <button class="btn burger__btn" aria-label="Открыть меню" id="burger">
+                                <div class="burger__btn--inner">
+                                    <span class="burger__btn--line"></span>
+                                    <span class="burger__btn--line"></span>
+                                </div>
+                                <span class="burger__btn--text">МЕНЮ</span>
+                            </button>
+                            <ul class="burger__menu burger-menu">
+                                <li class="burger-menu__item">
+                                    <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">SPA &
+                                        Релакс</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">О центре</a>
+                                </li>
+                                <li class="burger-menu__item">
+                                    <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">Контаткты</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="header__logo">
-                        <img src="./images/Logo_op.png" alt="Логотип компании">
+                    <div class="header__logo" data-submenu id="logo">
+                        <img class="header__logo--img" src="./images/Logo.png" alt="Логотип компании">
+                        <img class="header__logo--img small" src="./images/Logo_small.png" alt="Логотип компании">
+                        <img class="header__logo--img color" src="./images/Logo_black.png" alt="Логотип компании">
                     </div>
-                    <div class="header__right">
+                    <div class="header__right visible">
                         <div class="header__actions">
                             <a class="header__link link-social link-social--opacity" href="https://wa.me/"
                                 aria-label="Связаться с нами в Ватсап" target="_blank">
@@ -118,36 +142,6 @@
                             </div>
                         </button>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header__wrapper header__wrapper--color header__wrapper--hidden">
-            <div class="container header__container">
-                <div class="header__top">
-                    <nav class="nav">
-                        <button class="btn btn__nav" aria-label="Открыть меню" id="burger">
-                            <div class="btn__nav--burger">
-                                <span class="btn__nav--line"></span>
-                                <span class="btn__nav--line"></span>
-                            </div>
-                            <span class="btn__nav--text">МЕНЮ</span>
-                        </button>
-                        <ul class="nav__menu burger-menu">
-                            <li class="burger-menu__item">
-                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">SPA & Релакс</a>
-                            </li>
-                            <li class="burger-menu__item">
-                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">О центре</a>
-                            </li>
-                            <li class="burger-menu__item">
-                                <a href="#" class="burger-menu__link" aria-label="Перейти к разделу">Контаткты</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="header__logo">
-                        <img src="./images/Logo.png" alt="Логотип компании">
                     </div>
                     <div class="header__right">
                         <div class="header__actions">
@@ -178,67 +172,65 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
-        <div class="menu__wrapper" id="menu-top">
-            <div class="container menu-top__container">
-                <ul class="menu__top menu-top">
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" id="top-arrow" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">все услуги</span>
-                            <svg class="menu-top__icon">
-                                <use href="#arrow"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">О центре</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">косметология</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">SPA & Thai</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">велнесс-терапия</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">SPA & Релакс</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">коррекция фигуры</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">Журнал</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">сертификаты</span>
-                        </a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__link" href="#" aria-label="Перейти к разделу">
-                            <span class="menu-top__text">Контакты</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                <nav class="header__nav">
+                    <ul class="header__list menu-top" data-submenu>
+                        <li class="menu-top__item menu-top__item--submenu">
+                            <a class="menu-top__link" href="#" id="top-arrow" aria-label="Перейти к разделу"
+                                data-submenu>
+                                <span class="menu-top__text">все услуги</span>
+                                <svg class="menu-top__icon">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">О центре</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">косметология</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">SPA & Thai</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">велнесс-терапия</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">SPA & Релакс</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">коррекция фигуры</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">Журнал</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">сертификаты</span>
+                            </a>
+                        </li>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#" aria-label="Перейти к разделу" data-submenu>
+                                <span class="menu-top__text">Контакты</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>            
+        </div>        
         <div class="menu__inner" id="menu-bottom">
             <div class="container menu-bottom__container">
                 <ul class="menu__bottom menu">
@@ -373,10 +365,10 @@
 
     <main class="main">
         <section class="hero">
+            <img class="hero__img" src="./images/slides/slide_1.png" id="hero-bg" alt="Фото комнаты релакса">
             <div class="container hero__container">
-                <img class="hero__img" id="hero-bg" alt="Фото комнаты релакса">
                 <div class="hero__content">
-                    <h1 class="hero__title">Ангел Concept &mdash;
+                    <h1 class="hero__title" id="title">Ангел Concept &mdash;
                         центр премиального ухода и&nbsp;косметологии в&nbsp;Ставрополе</h1>
                     <p class="hero__descr">Место, где вы&nbsp;выбираете заботу о&nbsp;себе как стиль жизни. Эстетично,
                         профессионально и&nbsp;легко</p>
@@ -390,7 +382,7 @@
                     </button>
                 </div>
                 <div class="hero__slides">
-                    <div class="hero__slide slide .slide--active" data-card="1">
+                    <div class="hero__slide slide slide--active" data-card="1">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">1</div>
@@ -411,7 +403,7 @@
                             <div class="slide__content">
                                 <div class="slide__number">2</div>
                                 <p class="slide__descr">
-                                    Коррекция фигуры и силуэта
+                                    Коррекция фигуры и&nbsp;силуэта
                                 </p>
                             </div>
                             <div class="slide__img">
@@ -427,7 +419,7 @@
                             <div class="slide__content">
                                 <div class="slide__number">3</div>
                                 <p class="slide__descr">
-                                    SPA и европейские массажи
+                                    SPA и&nbsp;европейские массажи
                                 </p>
                             </div>
                             <div class="slide__img">
@@ -443,7 +435,7 @@
                             <div class="slide__content">
                                 <div class="slide__number">4</div>
                                 <p class="slide__descr">
-                                    Велнес-программы и флоатация
+                                    Велнес-программы и&nbsp;флоатация
                                 </p>
                             </div>
                             <div class="slide__img">
@@ -475,7 +467,7 @@
                             <div class="slide__content">
                                 <div class="slide__number">6</div>
                                 <p class="slide__descr">
-                                    Тайские и балийские массажи
+                                    Тайские и&nbsp;балийские массажи
                                 </p>
                             </div>
                             <div class="slide__img">
