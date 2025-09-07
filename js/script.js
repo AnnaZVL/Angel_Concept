@@ -145,6 +145,19 @@ function changeSlide(id) {
     };
 
     title.innerHTML = currentSlide.text;
+
+    cardsSlide.forEach(card => {
+            if (+card.dataset.card !== currentSlideId) {
+                console.log('NO', +card.dataset.card !== currentSlideId, +card.dataset.card, currentSlideId);
+                card.classList.remove('slide--active') 
+                card.classList.add('slide--def')  
+            } else {
+
+                console.log('OK', +card.dataset.card, currentSlideId);
+                card.classList.remove('slide--def')   
+                card.classList.add('slide--active') 
+            }
+        })
 }
 
 changeSlide(1)
@@ -152,9 +165,14 @@ changeSlide(1)
 cardsSlide.forEach(card => {
     const btn = card.querySelector('.slide__btn');
     
-    btn.addEventListener('click', (e) => {         
-            const id = +card.dataset.card;   
+    btn.addEventListener('click', (e) => {   
+        
+          
+        const id = +card.dataset.card;   
+        
+        changeSlide(id)
+        
+
             
-            changeSlide(id)
-        })
+    })
 })
