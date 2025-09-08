@@ -1,5 +1,6 @@
 const btnArrow = document.getElementById('top-arrow');
 const menuBottom = document.getElementById('menu-bottom');
+const menuTop = document.getElementById('menu-top');
 const linkSubmenu = document.querySelector('.menu-top__item--submenu');
 const listElemSubmenu = document.querySelectorAll('[data-submenu]');
 const headerRights = document.querySelectorAll('.header__right')
@@ -8,6 +9,7 @@ const burgerInner = document.getElementById('burger-inner');
 const logo = document.getElementById('logo');    
 const header =  document.getElementById('header');
 const burger = document.getElementById('burger');
+const burgerBtn = document.querySelector('.burger-btn');
 
 const currentScrollY = window.scrollY;    
 
@@ -48,14 +50,16 @@ menuBottom.addEventListener('mouseleave', (e) => {
 burger.addEventListener('click', (event) => {  
     const target = event.target;
 
-    menuBottom.classList.add('open');
+    menuBottom.classList.toggle('open');
 
     listElemSubmenu.forEach(elem => {    
         elem.classList.add('color');           
     })
 
     headerRights[0].classList.remove('visible');
-    headerRights[1].classList.add('visible');    
+    headerRights[1].classList.add('visible'); 
+    
+    burgerBtn.classList.toggle('open')
 });
 
 //Смена шапок при скролле
@@ -84,7 +88,8 @@ window.addEventListener('scroll', () => {
         header.classList.remove('color');  
         
         headerRights[1].classList.remove('visible');
-        headerRights[0].classList.add('visible');            
+        headerRights[0].classList.add('visible');   
+        menuTop.classList.remove('color');         
     } 
 
     lastScrollY = currentScrollY;
@@ -92,6 +97,8 @@ window.addEventListener('scroll', () => {
 
 // Слайдер карточек
 const cardsSlide = document.querySelectorAll('[data-card]')
+let slideInterval;
+let currentSlideId = 1;
 
 const heroImages = [
     {
@@ -127,24 +134,27 @@ const heroImages = [
 ]
 
 function changeSlide(id) {
-    let currentSlideId = id || 1;
-
     const currentSlide = heroImages.find(slide => slide.id === currentSlideId);
 
-    const heroImage = document.getElementById('hero-bg');
     const title = document.getElementById('title');
-
+    title.classList.add('hidden'); 
+    
+    const heroImage = document.getElementById('hero-bg');
     const newImage = new Image();
     newImage.src = currentSlide.src
     newImage.onload = function() {        
         heroImage.style.opacity = '0';
+
         setTimeout(() => {
             heroImage.src = newImage.src;
             heroImage.style.opacity = '1';
-        }, 300);
-    };
 
-    title.innerHTML = currentSlide.text;
+            setTimeout(() => {
+                title.innerHTML = currentSlide.text;
+                title.classList.remove('hidden');
+            }, 150);
+        }, 300);
+    };       
 
     cardsSlide.forEach(card => {
             if (+card.dataset.card !== currentSlideId) {               
@@ -155,17 +165,34 @@ function changeSlide(id) {
                 card.classList.add('slide--active') 
             }
         })
+    restartSlideTimer();
 }
 
-changeSlide(1)
+function nextSlide() {
+    currentSlideId = currentSlideId % heroImages.length + 1;
+    changeSlide(currentSlideId);
+}
 
-cardsSlide.forEach(card => {    
-    card.addEventListener('click', (e) => {             
-        const id = +card.dataset.card;   
-        
-        changeSlide(id);           
-    })
-})
+function startSlideTimer() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+// Перезапуск таймера
+function restartSlideTimer() {
+    clearInterval(slideInterval);
+    startSlideTimer();
+}
+
+// Обработчики кликов на карточки
+cardsSlide.forEach(card => {
+    card.addEventListener('click', () => {
+        const id = +card.dataset.card;
+        changeSlide(id);
+    });
+});
+
+changeSlide(1);
+startSlideTimer();
 
 const items = document.querySelectorAll('.menu-mobile__item')
 

@@ -72,8 +72,8 @@
         <div class="header__wrapper" id="header-wrapper"></div>
         <div class="container header__container ">
             <div class="header__top" id="top_opacity">
-                <div class="header__left">
-                    <div class="header__left--inner" id="inner">
+                <div class="header__left header-left">
+                    <div class="header-left__inner" id="inner">
                         <a class="header__yandex yandex" href="https://ya.ru/" data-submenu
                             aria-label="перейти в Яндекс" target="_blank">
                             <svg class="yandex__icon">
@@ -88,12 +88,12 @@
                             уровня в Ставрополе</span>
                     </div>
                     <div class="header__burger burger hidden" id="burger-inner">
-                        <button class="btn burger__btn" aria-label="Открыть меню" id="burger">
-                            <div class="burger__btn--inner">
-                                <span class="burger__btn--line"></span>
-                                <span class="burger__btn--line"></span>
+                        <button class="btn burger-btn" aria-label="Открыть меню" id="burger">
+                            <div class="burger-btn__inner">
+                                <span class="burger-btn__line"></span>
+                                <span class="burger-btn__line"></span>
                             </div>
-                            <span class="burger__btn--text">МЕНЮ</span>
+                            <span class="burger-btn__text">МЕНЮ</span>
                         </button>
                         <ul class="burger__menu burger-menu">
                             <li class="burger-menu__item">
@@ -110,10 +110,10 @@
                     </div>
                 </div>
 
-                <div class="header__logo" data-submenu id="logo">
-                    <img class="header__logo--img" src="./images/Logo.png" alt="Логотип компании">
-                    <img class="header__logo--img small" src="./images/Logo_small.png" alt="Логотип компании">
-                    <img class="header__logo--img color" src="./images/Logo_black.png" alt="Логотип компании">
+                <div class="header__logo logo" data-submenu id="logo">
+                    <img class="logo__img" src="./images/Logo.png" alt="Логотип компании">
+                    <img class="logo__img small" src="./images/Logo_small.png" alt="Логотип компании">
+                    <img class="logo__img color" src="./images/Logo_black.png" alt="Логотип компании">
                 </div>
                 <div class="header__right visible">
                     <div class="header__actions">
@@ -173,7 +173,7 @@
 
             </div>
             <nav class="header__nav">
-                <ul class="header__list menu-top" data-submenu>
+                <ul class="header__list menu-top" id="menu-top" data-submenu>
                     <li class="menu-top__item menu-top__item--submenu">
                         <a class="menu-top__link" href="#" id="top-arrow" aria-label="Перейти к разделу" data-submenu>
                             <span class="menu-top__text">все услуги</span>
@@ -230,11 +230,11 @@
                 </ul>
             </nav>
         </div>
-        <div class="menu__inner" id="menu-bottom">
+        <div class="menu-bottom__inner" id="menu-bottom">
             <div class="container menu-bottom__container">
-                <ul class="menu__bottom menu">
+                <ul class="menu">
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu__text">SPA & Релакс</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -242,7 +242,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">Wellness-терапия</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -250,7 +250,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">Коррекция фигуры</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -258,7 +258,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">Косметология лица</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -266,7 +266,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">Beauty-услуги</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -274,7 +274,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">Дополнительно</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -282,7 +282,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">О компании</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -290,7 +290,7 @@
                         </button>
                     </li>
                     <li class="menu__item">
-                        <button href="#" class="btn menu__btn" aria-label="Открыть подраздел">
+                        <button class="btn menu__btn" aria-label="Открыть подраздел">
                             <span class="menu__text">О центре</span>
                             <svg class="menu__icon">
                                 <use href="#menu-arrow"></use>
@@ -298,7 +298,7 @@
                         </button>
                     </li>
                 </ul>
-                <ul class="menu_sub-menu sub-menu">
+                <ul class="menu-bottom__sub-menu sub-menu">
                     <li class="sub-menu__item">
                         Европейские массажи
                     </li>
@@ -315,8 +315,8 @@
                         Мужской уход
                     </li>
                 </ul>
-                <div class="menu__cards">
-                    <div class="menu__card card">
+                <div class="menu-bottom__cards">
+                    <div class="card">
                         <div class="card__img">
                             <img src="./images/cards/card_1.png" alt="Фото процедуры">
                         </div>
@@ -326,7 +326,7 @@
                             <button class="btn card__btn">ПОДРОБНЕЕ</button>
                         </div>
                     </div>
-                    <div class="nav__card card">
+                    <div class="card">
                         <div class="card__img">
                             <img src="./images/cards/card_2.png" alt="Фото процедуры">
                         </div>
@@ -337,7 +337,7 @@
                             <button class="btn card__btn">ПОДРОБНЕЕ</button>
                         </div>
                     </div>
-                    <div class="nav__card card">
+                    <div class="card">
                         <div class="card__img">
                             <img src="./images/cards/card_3.png" alt="Фото процедуры">
                         </div>
@@ -347,7 +347,7 @@
                             <button class="btn card__btn">ПОДРОБНЕЕ</button>
                         </div>
                     </div>
-                    <div class="nav__card card">
+                    <div class="card">
                         <div class="card__img">
                             <img src="./images/cards/card_4.png" alt="Фото процедуры">
                         </div>
@@ -359,19 +359,19 @@
                     </div>
                 </div>
                 <ul class="menu__mobile menu-mobile">
-                    <li class="menu-mobile__item open">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                    <li class="menu-mobile__item">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">SPA & Релакс</span>
                             <svg class="menu-mobile__icon">
                                 <use href="#arrow"></use>
                             </svg>
                         </button>
-                        <div class="menu-mobile__inner">
-                            <ul class="menu-mobile_sub-menu sub-mobile">
+                        <div class="menu-mobile__inner hidden">
+                            <ul class="menu-mobile__sub-menu sub-mobile">
                                 <li class="sub-mobile__item">
                                     Европейские массажи
                                 </li>
-                                <li class="sub-mobile__item sub-menu__item--active">
+                                <li class="sub-mobile__item">
                                     Женские ритуалы
                                 </li>
                                 <li class="sub-mobile__item">
@@ -387,18 +387,18 @@
                         </div>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">Wellness-терапия</span>
                             <svg class="menu-mobile__icon">
                                 <use href="#arrow"></use>
                             </svg>
                         </button>
                         <div class="menu-mobile__inner hidden">
-                            <ul class="menu-mobile_sub-menu sub-mobile">
+                            <ul class="menu-mobile__sub-menu sub-mobile">
                                 <li class="sub-mobile__item">
                                     Релакс и тренировка спины
                                 </li>
-                                <li class="sub-mobile__item sub-menu__item--active">
+                                <li class="sub-mobile__item">
                                     Массажи
                                 </li>
                                 <li class="sub-mobile__item">
@@ -408,18 +408,18 @@
                         </div>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">Коррекция фигуры</span>
                             <svg class="menu-mobile__icon">
                                 <use href="#arrow"></use>
                             </svg>
                         </button>
                         <div class="menu-mobile__inner hidden">
-                            <ul class="menu-mobile_sub-menu sub-mobile">
+                            <ul class="menu-mobile__sub-menu sub-mobile">
                                 <li class="sub-mobile__item">
                                     эстетическая косметология
                                 </li>
-                                <li class="sub-mobile__item sub-menu__item--active">
+                                <li class="sub-mobile__item">
                                     нитевой лифтинг
                                 </li>
                                 <li class="sub-mobile__item">
@@ -432,31 +432,31 @@
                         </div>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">Beauty-услуги</span>
 
                         </button>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">Косметология лица</span>
 
                         </button>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">Дополнительно</span>
 
                         </button>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">О компании</span>
 
                         </button>
                     </li>
                     <li class="menu-mobile__item">
-                        <button href="#" class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
+                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
                             <span class="menu-mobile__text">О центре</span>
 
                         </button>
@@ -495,7 +495,7 @@
                     </button>
                 </div>
                 <div class="hero__slides">
-                    <button class="hero__slide slide" data-card="1">
+                    <div class="hero__slide slide" data-card="1">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">1</div>
@@ -508,9 +508,9 @@
                             </div>
                         </div>
 
-                        <span class="slide__btn--line"></span>
-                    </button>
-                    <button class="hero__slide slide slide--def" data-card="2">
+                        <span class="slide__line"></span>
+                    </div>
+                    <div class="hero__slide slide slide--def" data-card="2">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">2</div>
@@ -523,9 +523,9 @@
                             </div>
                         </div>
 
-                        <span class="slide__btn--line"></span>
-                    </button>
-                    <button class="hero__slide slide slide--def" data-card="3">
+                        <span class="slide__line"></span>
+                    </div>
+                    <div class="hero__slide slide slide--def" data-card="3">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">3</div>
@@ -537,9 +537,9 @@
                                 <img src="./images/slides/slide_3.webp" alt="Фото комнаты релакса">
                             </div>
                         </div>
-                        <span class="slide__btn--line"></span>
-                    </button>
-                    <button class="hero__slide slide .slide--def" data-card="4">
+                        <span class="slide__line"></span>
+                    </div>
+                    <div class="hero__slide slide slide--def" data-card="4">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">4</div>
@@ -552,9 +552,9 @@
                             </div>
                         </div>
 
-                        <span class="slide__btn--line"></span>
-                    </button>
-                    <button class="hero__slide slide .slide--def" data-card="5">
+                        <span class="slide__line"></span>
+                    </div>
+                    <div class="hero__slide slide slide--def" data-card="5">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">5</div>
@@ -567,9 +567,9 @@
                             </div>
                         </div>
 
-                        <span class="slide__btn--line"></span>
-                    </button>
-                    <button class="hero__slide slide .slide--def" data-card="6">
+                        <span class="slide__line"></span>
+                    </div>
+                    <div class="hero__slide slide slide--def" data-card="6">
                         <div class="slide__inner">
                             <div class="slide__content">
                                 <div class="slide__number">6</div>
@@ -582,8 +582,8 @@
                             </div>
                         </div>
 
-                        <span class="slide__btn--line"></span>
-                    </button>
+                        <span class="slide__line"></span>
+                    </div>
                 </div>
             </div>
         </section>
