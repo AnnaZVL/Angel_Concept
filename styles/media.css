@@ -56,6 +56,8 @@
 
     .menu-bottom__container {
         display: block;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .menu__mobile {
@@ -75,11 +77,17 @@
     }
 }
 
-@media (max-width: 768px) { 
-    html {
-        font-size: 12px;
+@media (max-width: 992px) {
+    .hero__container {
+        padding-bottom: 50px;
     }
 
+    .hero__content {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) { 
     .hero__content {
         max-width: 100%;
     }
@@ -90,11 +98,18 @@
 }
 
 @media (max-width: 562px) { 
+    html {
+        font-size: 12px;
+    }
+
     .burger-btn__text {
         display: none;
     }
 
     .burger-btn {
         width: 44px;
+        
     }
+
+    
 }

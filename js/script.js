@@ -14,7 +14,6 @@ const burgerBtn = document.querySelector('.burger-btn');
 const currentScrollY = window.scrollY;    
 
 let isOpenMenu = false;
-let isOpenMenuBottom = false;
 let lastScrollY = window.scrollY;
 let hasScroll = false;
 
@@ -22,6 +21,7 @@ linkSubmenu.addEventListener('mouseenter', () => {
     if (hasScroll) return;
 
     menuBottom.classList.add('open');
+    isOpenMenu = true;
 
     listElemSubmenu.forEach(elem => {    
         elem.classList.add('color');           
@@ -35,6 +35,8 @@ linkSubmenu.addEventListener('mouseenter', () => {
 menuBottom.addEventListener('mouseleave', (e) => {  
     if (!menuBottom.contains(e.relatedTarget)) {  
         menuBottom.classList.remove('open');
+
+        isOpenMenu = false;
 
         listElemSubmenu.forEach(elem => {        
             elem.classList.remove('color');
@@ -51,13 +53,20 @@ burger.addEventListener('click', (event) => {
     const target = event.target;
 
     menuBottom.classList.toggle('open');
+    if (menuBottom.classList.contains('open')) {
+        isOpenMenu = true;
+    } else {
+        isOpenMenu = false;
+    }
 
+    document.body.style.overflow = isOpenMenu ? 'hidden' : 'scroll';
+    
     listElemSubmenu.forEach(elem => {    
-        elem.classList.add('color');           
+        elem.classList.toggle('color');           
     })
 
-    headerRights[0].classList.remove('visible');
-    headerRights[1].classList.add('visible'); 
+    headerRights[0].classList.toggle('visible');
+    headerRights[1].classList.toggle('visible'); 
     
     burgerBtn.classList.toggle('open')
 });
@@ -65,6 +74,8 @@ burger.addEventListener('click', (event) => {
 //Смена шапок при скролле
 window.addEventListener('scroll', () => {    
     const currentScrollY = window.scrollY;     
+
+    if (isOpenMenu) return;
 
     if (currentScrollY > lastScrollY && currentScrollY > 100) { 
         hasScroll = true;
@@ -75,11 +86,8 @@ window.addEventListener('scroll', () => {
         header.classList.add('color');
 
         headerRights[0].classList.remove('visible');
-        headerRights[1].classList.add('visible');
-
-        isOpenMenuBottom = false;
-        isOpenMenu = false;
-    } else if(!isOpenMenuBottom || !isOpenMenu) { 
+        headerRights[1].classList.add('visible');        
+    } else if(!isOpenMenu) { 
         hasScroll = false;
 
         inner.classList.remove('hidden');
@@ -165,7 +173,7 @@ function changeSlide(id) {
                 card.classList.add('slide--active') 
             }
         })
-    restartSlideTimer();
+   restartSlideTimer();
 }
 
 function nextSlide() {
@@ -194,26 +202,4 @@ cardsSlide.forEach(card => {
 changeSlide(1);
 startSlideTimer();
 
-const items = document.querySelectorAll('.menu-mobile__item')
-
-items.forEach(el => {
-    const btn = el.querySelector('.menu-mobile__icon');
-    const inner = el.querySelector('.menu-mobile__inner');
-
-    if (btn)
-    btn.addEventListener('click', () => {
-        items.forEach(openItem => {
-            if (openItem !== el) {   
-                setTimeout(() => {             
-                    openItem.classList.toggle('open');
-                    openItem.querySelector('.menu-mobile__inner').classList.toggle('hidden');   
-                 }, 500)             
-            }
-        });
-        setTimeout(() => {
-            el.classList.toggle('open');
-            inner.classList.toggle('hidden');
-        }, 500)
-        
-    })
-})
+new Accordion('.accordion-container');

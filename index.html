@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel_Concept Test</title>
+    <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.4.1/dist/accordion.min.css" />
+
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/media.css">
 </head>
@@ -57,9 +59,9 @@
                 d="M7.79956 7.39922C7.79956 7.62013 7.62047 7.79922 7.39956 7.79922H7.00034C6.77943 7.79922 6.60034 7.62013 6.60034 7.39922V3.21217C6.60034 2.85581 6.16949 2.67734 5.9175 2.92933L1.40662 7.4402C1.25041 7.59641 0.997146 7.59641 0.840937 7.4402L0.558966 7.15823C0.402756 7.00202 0.402756 6.74876 0.558966 6.59255L5.06984 2.08167C5.32183 1.82968 5.14336 1.39883 4.787 1.39883H0.599951C0.379038 1.39883 0.199951 1.21974 0.199951 0.998827V0.599608C0.199951 0.378694 0.379037 0.199608 0.599951 0.199608H7.39956C7.62047 0.199608 7.79956 0.378694 7.79956 0.599608V7.39922Z" />
         </symbol>
 
-        <symbol id="arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M12.9816 1.8195C13.0594 1.89763 13.0589 2.02393 12.9809 2.10193L6.72814 8.35472C6.68698 8.3957 6.6328 8.41222 6.57898 8.40996C6.52754 8.41025 6.47604 8.3925 6.43673 8.35334L0.182647 2.09917C0.104747 2.02105 0.105247 1.89477 0.183347 1.81674L1.31445 0.685646C1.39248 0.607617 1.51877 0.607103 1.59683 0.684956L6.30028 5.38846C6.45649 5.54467 6.70976 5.54467 6.86597 5.38846L11.5667 0.687724C11.6448 0.609653 11.7717 0.609726 11.8498 0.687724L12.9816 1.8195Z" />
+        <symbol id="arrow" width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.918 1.25L7.41797 6.75L1.91797 1.25" stroke-width="1.6" stroke-linecap="square"
+                stroke-linejoin="round" />
         </symbol>
 
         <symbol id="menu-arrow" width="13" height="14" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg">
@@ -358,108 +360,160 @@
                         </div>
                     </div>
                 </div>
-                <ul class="menu__mobile menu-mobile">
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">SPA & Релакс</span>
-                            <svg class="menu-mobile__icon">
-                                <use href="#arrow"></use>
-                            </svg>
-                        </button>
-                        <div class="menu-mobile__inner hidden">
-                            <ul class="menu-mobile__sub-menu sub-mobile">
-                                <li class="sub-mobile__item">
-                                    Европейские массажи
+                <ul class="menu__mobile menu-mobile accordion-container">
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">SPA & Релакс</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel">
+                            <ul class="menu-mobile__sub-menu sub-mobile ac-text">
+                                <li class="sub-mobile__item ">
+                                    <a class="sub-mobile__link" href="#" aria-label="Перейти к разделу">
+                                        Европейские массажи
+                                    </a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    Женские ритуалы
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Женские ритуалы</a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    Девичники
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Девичники</a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    Для двоих
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Для двоих</a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    Мужской уход
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">Wellness-терапия</span>
-                            <svg class="menu-mobile__icon">
-                                <use href="#arrow"></use>
-                            </svg>
-                        </button>
-                        <div class="menu-mobile__inner hidden">
-                            <ul class="menu-mobile__sub-menu sub-mobile">
-                                <li class="sub-mobile__item">
-                                    Релакс и тренировка спины
-                                </li>
-                                <li class="sub-mobile__item">
-                                    Массажи
-                                </li>
-                                <li class="sub-mobile__item">
-                                    Wellness-ритуалы
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Мужской уход</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">Коррекция фигуры</span>
-                            <svg class="menu-mobile__icon">
-                                <use href="#arrow"></use>
-                            </svg>
-                        </button>
-                        <div class="menu-mobile__inner hidden">
-                            <ul class="menu-mobile__sub-menu sub-mobile">
-                                <li class="sub-mobile__item">
-                                    эстетическая косметология
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">Wellness-терапия</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel">
+                            <ul class="menu-mobile__sub-menu sub-mobile ac-text">
+                                <li class="sub-mobile__item ">
+                                    <a class="sub-mobile__link" href="#" aria-label="Перейти к разделу">
+                                        Релакс и тренировка спины
+                                    </a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    нитевой лифтинг
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Массажи</a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    инъекционная косметология
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        Wellness-ритуалы</a>
                                 </li>
-                                <li class="sub-mobile__item">
-                                    аппаратная косметология
-                                </li>
+
                             </ul>
                         </div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">Beauty-услуги</span>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">Коррекция фигуры</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel">
+                            <ul class="menu-mobile__sub-menu sub-mobile ac-text">
+                                <li class="sub-mobile__item ">
+                                    <a class="sub-mobile__link" href="#" aria-label="Перейти к разделу">
+                                        эстетическая косметология
+                                    </a>
+                                </li>
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        нитевой лифтинг</a>
+                                </li>
+                                <li class="sub-mobile__item"><a class="sub-mobile__link" href="#"
+                                        aria-label="Перейти к разделу">
+                                        аппаратная косметология</a>
+                                </li>
 
-                        </button>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">Косметология лица</span>
-
-                        </button>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">Beauty-услуги</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel"></div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">Дополнительно</span>
-
-                        </button>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">Косметология лица</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel"></div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">О компании</span>
-
-                        </button>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">Дополнительно</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel"></div>
                     </li>
-                    <li class="menu-mobile__item">
-                        <button class="btn menu-mobile__btn menu__btn--active" aria-label="Открыть подраздел">
-                            <span class="menu-mobile__text">О центре</span>
-
-                        </button>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">О компании</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel"></div>
+                    </li>
+                    <li class="menu-mobile__item ac">
+                        <h3 class="menu-mobile__header ac-header">
+                            <button class="btn menu-mobile__btn menu__btn--active ac-trigger"
+                                aria-label="Открыть подраздел">
+                                <span class="menu-mobile__text">О центре</span>
+                                <svg class="menu-mobile__icon ">
+                                    <use href="#arrow"></use>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div class="menu-mobile__inner ac-panel"></div>
                     </li>
                 </ul>
             </div>
@@ -494,101 +548,102 @@
                         </div>
                     </button>
                 </div>
-                <div class="hero__slides">
-                    <div class="hero__slide slide" data-card="1">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">1</div>
-                                <p class="slide__descr">
-                                    Косметология: уходы, инъекции, лифтинг
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_1.png" alt="Фото комнаты релакса">
-                            </div>
+            </div>
+            <div class="hero__slides">
+                <div class="hero__slide slide" data-card="1">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">1</div>
+                            <p class="slide__descr">
+                                Косметология: уходы, инъекции, лифтинг
+                            </p>
                         </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_1.png" alt="Фото комнаты релакса">
+                        </div>
+                    </div>
 
-                        <span class="slide__line"></span>
-                    </div>
-                    <div class="hero__slide slide slide--def" data-card="2">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">2</div>
-                                <p class="slide__descr">
-                                    Коррекция фигуры и&nbsp;силуэта
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_2.webp" alt="Фото комнаты релакса">
-                            </div>
+                    <span class="slide__line"></span>
+                </div>
+                <div class="hero__slide slide slide--def" data-card="2">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">2</div>
+                            <p class="slide__descr">
+                                Коррекция фигуры и&nbsp;силуэта
+                            </p>
                         </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_2.webp" alt="Фото комнаты релакса">
+                        </div>
+                    </div>
 
-                        <span class="slide__line"></span>
-                    </div>
-                    <div class="hero__slide slide slide--def" data-card="3">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">3</div>
-                                <p class="slide__descr">
-                                    SPA и&nbsp;европейские массажи
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_3.webp" alt="Фото комнаты релакса">
-                            </div>
+                    <span class="slide__line"></span>
+                </div>
+                <div class="hero__slide slide slide--def" data-card="3">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">3</div>
+                            <p class="slide__descr">
+                                SPA и&nbsp;европейские массажи
+                            </p>
                         </div>
-                        <span class="slide__line"></span>
-                    </div>
-                    <div class="hero__slide slide slide--def" data-card="4">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">4</div>
-                                <p class="slide__descr">
-                                    Велнес-программы и&nbsp;флоатация
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_4.webp" alt="Фото комнаты релакса">
-                            </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_3.webp" alt="Фото комнаты релакса">
                         </div>
+                    </div>
+                    <span class="slide__line"></span>
+                </div>
+                <div class="hero__slide slide slide--def" data-card="4">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">4</div>
+                            <p class="slide__descr">
+                                Велнес-программы и&nbsp;флоатация
+                            </p>
+                        </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_4.webp" alt="Фото комнаты релакса">
+                        </div>
+                    </div>
 
-                        <span class="slide__line"></span>
-                    </div>
-                    <div class="hero__slide slide slide--def" data-card="5">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">5</div>
-                                <p class="slide__descr">
-                                    Beauty-услуги: волосы, ногти, макияж
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_5.webp" alt="Фото комнаты релакса">
-                            </div>
+                    <span class="slide__line"></span>
+                </div>
+                <div class="hero__slide slide slide--def" data-card="5">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">5</div>
+                            <p class="slide__descr">
+                                Beauty-услуги: волосы, ногти, макияж
+                            </p>
                         </div>
-
-                        <span class="slide__line"></span>
-                    </div>
-                    <div class="hero__slide slide slide--def" data-card="6">
-                        <div class="slide__inner">
-                            <div class="slide__content">
-                                <div class="slide__number">6</div>
-                                <p class="slide__descr">
-                                    Тайские и&nbsp;балийские массажи
-                                </p>
-                            </div>
-                            <div class="slide__img">
-                                <img src="./images/slides/slide_6.webp" alt="Фото комнаты релакса">
-                            </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_5.webp" alt="Фото комнаты релакса">
                         </div>
-
-                        <span class="slide__line"></span>
                     </div>
+
+                    <span class="slide__line"></span>
+                </div>
+                <div class="hero__slide slide slide--def" data-card="6">
+                    <div class="slide__inner">
+                        <div class="slide__content">
+                            <div class="slide__number">6</div>
+                            <p class="slide__descr">
+                                Тайские и&nbsp;балийские массажи
+                            </p>
+                        </div>
+                        <div class="slide__img">
+                            <img src="./images/slides/slide_6.webp" alt="Фото комнаты релакса">
+                        </div>
+                    </div>
+
+                    <span class="slide__line"></span>
                 </div>
             </div>
         </section>
         <section class="services"></section>
     </main>
+    <script src="https://unpkg.com/accordion-js@3.4.1/dist/accordion.min.js"></script>
     <script defer src="./js/script.js"></script>
 </body>
 
