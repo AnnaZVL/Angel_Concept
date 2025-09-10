@@ -17,7 +17,7 @@ let isOpenMenu = false;
 let lastScrollY = window.scrollY;
 let hasScroll = false;
 
-linkSubmenu.addEventListener('mouseenter', () => {
+linkSubmenu.addEventListener('mouseenter', () => {    
     if (hasScroll) return;
 
     menuBottom.classList.add('open');
@@ -29,10 +29,12 @@ linkSubmenu.addEventListener('mouseenter', () => {
 
     headerRights[0].classList.remove('visible');
     headerRights[1].classList.add('visible');
-    btnArrow.classList.add('open');
-})
+    btnArrow.classList.add('open');    
+});
 
-menuBottom.addEventListener('mouseleave', (e) => {  
+menuBottom.addEventListener('mouseleave', (e) => {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+    
     if (!menuBottom.contains(e.relatedTarget)) {  
         menuBottom.classList.remove('open');
 
@@ -45,7 +47,7 @@ menuBottom.addEventListener('mouseleave', (e) => {
         headerRights[1].classList.remove('visible');
         headerRights[0].classList.add('visible');
         btnArrow.classList.remove('open');
-    }
+    }    
 })
 
 // Открытие бургер меню
@@ -68,7 +70,7 @@ burger.addEventListener('click', (event) => {
     headerRights[0].classList.toggle('visible');
     headerRights[1].classList.toggle('visible'); 
     
-    burgerBtn.classList.toggle('open')
+    burgerBtn.classList.toggle('open');    
 });
 
 //Смена шапок при скролле
@@ -142,6 +144,8 @@ const heroImages = [
 ]
 
 function changeSlide(id) {
+    currentSlideId = id;
+
     const currentSlide = heroImages.find(slide => slide.id === currentSlideId);
 
     const title = document.getElementById('title');
@@ -149,7 +153,8 @@ function changeSlide(id) {
     
     const heroImage = document.getElementById('hero-bg');
     const newImage = new Image();
-    newImage.src = currentSlide.src
+    newImage.src = currentSlide.src;
+
     newImage.onload = function() {        
         heroImage.style.opacity = '0';
 
@@ -194,8 +199,11 @@ function restartSlideTimer() {
 // Обработчики кликов на карточки
 cardsSlide.forEach(card => {
     card.addEventListener('click', () => {
-        const id = +card.dataset.card;
+        const id = +card.dataset.card;     
+
         changeSlide(id);
+        
+        restartSlideTimer()
     });
 });
 

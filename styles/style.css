@@ -310,7 +310,7 @@ body {
     align-items: center;
     gap: 8px;
     background: rgba(240, 231, 223, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.6);   
+    border: 1px solid rgba(255, 255, 255, 0.06);   
     border-radius: 34px;
     width: 166px;
     height: 48px;
@@ -336,9 +336,13 @@ body {
     transition: color 0.3s ease-in-out;
 }
 
-.yandex__text {
-    font-weight: normal;
-    font-size: 12px;
+.yandex__title {
+    font-weight: 500;
+    font-size: 0.875rem;        
+}
+
+.yandex__text {    
+    font-size: 0.75rem;
     opacity: 0.4;    
 }
 
