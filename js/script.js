@@ -106,108 +106,128 @@ window.addEventListener('scroll', () => {
 });
 
 // Слайдер карточек
-const cardsSlide = document.querySelectorAll('[data-card]')
-let slideInterval;
-let currentSlideId = 1;
+// const cardsSlide = document.querySelectorAll('[data-card]')
+// let slideInterval;
+// let currentSlideId = 1;
 
-const heroImages = [
-    {
-        id: 1,
-        src: './images/slides/slide_1.png',
-        text: `Ангел Concept &mdash;центр премиального ухода и&nbsp;косметологии в&nbsp;Ставрополе`,
-    },
-    {
-        id: 2,
-        src: './images/slides/slide_2.webp',
-        text: `Коррекция фигуры и&nbsp;силуэта`,
-    },
-    {
-        id: 3,
-        src: './images/slides/slide_3.webp',
-        text: `SPA и&nbsp;европейские массажи`,
-    },
-     {
-        id: 4,
-        src: './images/slides/slide_4.webp',
-        text: `Велнес-программы и&nbsp;флоатация`,
-    },
-     {
-        id: 5,
-        src: './images/slides/slide_5.webp',
-        text: `Beauty-услуги: волосы, ногти, макияж`,
-    },
-    {
-        id: 6,
-        src: './images/slides/slide_6.webp',
-        text: `Тайские и&nbsp;балийские массажи`,
-    },
-]
+// const heroImages = [
+//     {
+//         id: 1,
+//         src: './images/slides/slide_1.png',
+//         text: `Ангел Concept &mdash;центр премиального ухода и&nbsp;косметологии в&nbsp;Ставрополе`,
+//     },
+//     {
+//         id: 2,
+//         src: './images/slides/slide_2.webp',
+//         text: `Коррекция фигуры и&nbsp;силуэта`,
+//     },
+//     {
+//         id: 3,
+//         src: './images/slides/slide_3.webp',
+//         text: `SPA и&nbsp;европейские массажи`,
+//     },
+//      {
+//         id: 4,
+//         src: './images/slides/slide_4.webp',
+//         text: `Велнес-программы и&nbsp;флоатация`,
+//     },
+//      {
+//         id: 5,
+//         src: './images/slides/slide_5.webp',
+//         text: `Beauty-услуги: волосы, ногти, макияж`,
+//     },
+//     {
+//         id: 6,
+//         src: './images/slides/slide_6.webp',
+//         text: `Тайские и&nbsp;балийские массажи`,
+//     },
+// ]
 
-function changeSlide(id) {
-    currentSlideId = id;
+// function changeSlide(id) {
+//     currentSlideId = id;
 
-    const currentSlide = heroImages.find(slide => slide.id === currentSlideId);
+//     const currentSlide = heroImages.find(slide => slide.id === currentSlideId);
 
-    const title = document.getElementById('title');
-    title.classList.add('hidden'); 
+//     const title = document.getElementById('title');
+//     title.classList.add('hidden'); 
     
-    const heroImage = document.getElementById('hero-bg');
-    const newImage = new Image();
-    newImage.src = currentSlide.src;
+//     const heroImage = document.getElementById('hero-bg');
+//     const newImage = new Image();
+//     newImage.src = currentSlide.src;
 
-    newImage.onload = function() {        
-        heroImage.style.opacity = '0';
+//     newImage.onload = function() {        
+//         heroImage.style.opacity = '0';
 
-        setTimeout(() => {
-            heroImage.src = newImage.src;
-            heroImage.style.opacity = '1';
+//         setTimeout(() => {
+//             heroImage.src = newImage.src;
+//             heroImage.style.opacity = '1';
 
-            setTimeout(() => {
-                title.innerHTML = currentSlide.text;
-                title.classList.remove('hidden');
-            }, 150);
-        }, 300);
-    };       
+//             setTimeout(() => {
+//                 title.innerHTML = currentSlide.text;
+//                 title.classList.remove('hidden');
+//             }, 150);
+//         }, 300);
+//     };       
 
-    cardsSlide.forEach(card => {
-            if (+card.dataset.card !== currentSlideId) {               
-                card.classList.remove('slide--active') 
-                card.classList.add('slide--def')  
-            } else {
-                card.classList.remove('slide--def')   
-                card.classList.add('slide--active') 
-            }
-        })
-   restartSlideTimer();
-}
+//     cardsSlide.forEach(card => {
+//             if (+card.dataset.card !== currentSlideId) {               
+//                 card.classList.remove('slide--active') 
+//                 card.classList.add('slide--def')  
+//             } else {
+//                 card.classList.remove('slide--def')   
+//                 card.classList.add('slide--active') 
+//             }
+//         })
+//    restartSlideTimer();
+// }
 
-function nextSlide() {
-    currentSlideId = currentSlideId % heroImages.length + 1;
-    changeSlide(currentSlideId);
-}
+// function nextSlide() {
+//     currentSlideId = currentSlideId % heroImages.length + 1;
+//     changeSlide(currentSlideId);
+// }
 
-function startSlideTimer() {
-    slideInterval = setInterval(nextSlide, 5000);
-}
+// function startSlideTimer() {
+//     slideInterval = setInterval(nextSlide, 5000);
+// }
 
-// Перезапуск таймера
-function restartSlideTimer() {
-    clearInterval(slideInterval);
-    startSlideTimer();
-}
+// // Перезапуск таймера
+// function restartSlideTimer() {
+//     clearInterval(slideInterval);
+//     startSlideTimer();
+// }
 
-// Обработчики кликов на карточки
-cardsSlide.forEach(card => {
-    card.addEventListener('click', () => {
-        const id = +card.dataset.card;     
+// // Обработчики кликов на карточки
+// cardsSlide.forEach(card => {
+//     card.addEventListener('click', () => {
+//         const id = +card.dataset.card;     
 
-        changeSlide(id);
+//         changeSlide(id);
         
-        restartSlideTimer()
-    });
-});
+//         restartSlideTimer()
+//     });
+// });
 
-changeSlide(1);
-startSlideTimer();
+// changeSlide(1);
+// startSlideTimer();
 
 new Accordion('.accordion-container');
+
+const swiper = new Swiper(".mySwiper", {
+    spaceBetween: 4,
+    slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+   
+    
+});
+
+const swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 10,   
+    slidesPerView: 1,   
+    thumbs: {
+    swiper: swiper,
+    },
+     autoplay: {
+    delay: 5000,
+    },
+});
